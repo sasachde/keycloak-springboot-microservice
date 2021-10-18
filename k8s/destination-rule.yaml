@@ -1,0 +1,14 @@
+apiVersion: networking.istio.io/v1alpha3
+kind: DestinationRule
+metadata:
+  name: keycloak-springboot-microservice-dr
+spec:
+  host: keycloak-springboot-microservice
+  trafficPolicy:
+    tls:
+      mode: ISTIO_MUTUAL
+  subsets:
+    - name: keycloak-springboot-microservice-default
+      labels:
+        app: keycloak-springboot-microservice
+        version: v1

@@ -1,0 +1,16 @@
+apiVersion: networking.istio.io/v1alpha3
+kind: VirtualService
+metadata:
+  name: keycloak-springboot-microservice-vs
+spec:
+  hosts:
+    - "*"
+  gateways:
+    - secured-student-api-dr
+  http:
+    - route:
+        - destination:
+            host: keycloak-springboot-microservice
+            port:
+              number: 8080
+            subset: keycloak-springboot-microservice-default
