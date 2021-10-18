@@ -11,4 +11,4 @@ spec:
     - name: keycloak-springboot-microservice-default
       labels:
         app: keycloak-springboot-microservice
-        version: v1
+      #  version: v1
