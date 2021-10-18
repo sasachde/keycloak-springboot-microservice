@@ -6,7 +6,7 @@ spec:
   hosts:
     - "*"
   gateways:
-    - secured-student-api-dr
+    - secure-student-gateway
   http:
     - route:
         - destination:
