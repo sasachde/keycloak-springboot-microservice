@@ -12,7 +12,7 @@ import javax.annotation.security.RolesAllowed;
 public class TestController {
 
     @RequestMapping(method = RequestMethod.GET)
-    @RolesAllowed({ "admin", "user" })
+    //@RolesAllowed({ "admin", "user" })
     public ResponseEntity<String> getRoot() {
         return ResponseEntity.ok("Hello From Root");
     }
@@ -22,19 +22,19 @@ public class TestController {
         return ResponseEntity.ok("Hello Anonymous");
     }
 
-    @RolesAllowed("user")
+    //@RolesAllowed("user")
     @RequestMapping(value = "/user", method = RequestMethod.GET)
     public ResponseEntity<String> getUser(@RequestHeader String Authorization) {
         return ResponseEntity.ok("Hello User");
     }
 
-    @RolesAllowed("admin")
+    //@RolesAllowed("admin")
     @RequestMapping(value = "/admin", method = RequestMethod.GET)
     public ResponseEntity<String> getAdmin(@RequestHeader String Authorization) {
         return ResponseEntity.ok("Hello Admin");
     }
 
-    @RolesAllowed({ "admin", "user" })
+    //@RolesAllowed({ "admin", "user" })
     @RequestMapping(value = "/all-user", method = RequestMethod.GET)
     public ResponseEntity<String> getAllUser(@RequestHeader String Authorization) {
         return ResponseEntity.ok("Hello All User");
