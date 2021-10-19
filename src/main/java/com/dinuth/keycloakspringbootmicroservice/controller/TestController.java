@@ -11,6 +11,12 @@ import javax.annotation.security.RolesAllowed;
 @RequestMapping("/test")
 public class TestController {
 
+    @RequestMapping(method = RequestMethod.GET)
+    @RolesAllowed({ "admin", "user" })
+    public ResponseEntity<String> getRoot() {
+        return ResponseEntity.ok("Hello From Root");
+    }
+
     @RequestMapping(value = "/anonymous", method = RequestMethod.GET)
     public ResponseEntity<String> getAnonymous() {
         return ResponseEntity.ok("Hello Anonymous");
