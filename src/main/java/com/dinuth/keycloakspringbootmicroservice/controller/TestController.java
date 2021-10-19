@@ -13,7 +13,9 @@ public class TestController {
 
     @RequestMapping(method = RequestMethod.GET)
     //@RolesAllowed({ "admin", "user" })
-    public ResponseEntity<String> getRoot() {
+    public ResponseEntity<String> getRoot(
+//            @RequestHeader String Authorization
+    ) {
         return ResponseEntity.ok("Hello From Root");
     }
 
@@ -24,19 +26,25 @@ public class TestController {
 
     //@RolesAllowed("user")
     @RequestMapping(value = "/user", method = RequestMethod.GET)
-    public ResponseEntity<String> getUser(@RequestHeader String Authorization) {
+    public ResponseEntity<String> getUser(
+//            @RequestHeader String Authorization
+    ) {
         return ResponseEntity.ok("Hello User");
     }
 
     //@RolesAllowed("admin")
     @RequestMapping(value = "/admin", method = RequestMethod.GET)
-    public ResponseEntity<String> getAdmin(@RequestHeader String Authorization) {
+    public ResponseEntity<String> getAdmin(
+//            @RequestHeader String Authorization
+    ) {
         return ResponseEntity.ok("Hello Admin");
     }
 
     //@RolesAllowed({ "admin", "user" })
     @RequestMapping(value = "/all-user", method = RequestMethod.GET)
-    public ResponseEntity<String> getAllUser(@RequestHeader String Authorization) {
+    public ResponseEntity<String> getAllUser(
+//            @RequestHeader String Authorization
+    ) {
         return ResponseEntity.ok("Hello All User");
     }
 
